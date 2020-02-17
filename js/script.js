@@ -1,50 +1,45 @@
-//  Declaring variables
-var century, year,month,dayOfmonth;
-var days=["Sunday","Monday","Tuesday","Wesnesday","Thursday","Friday","Saturday","Sunday"];
-var maleNames=["Kwasi","Kwadwo","Kwabena", "Kwaku","Yaw","Kofi","Kwame"];
-var femaleNames=["Akosua", "Adwoa", "Abenaa","Akua","Yaa","Afua""Ama"];
+/*Declaring variables*/
 
 
-  function getDayofWeek(){
-  cc=parseInt(document.getElementById("centuryear").value);
-  dd=parseInt(document.getElementById("birthdate").value);
-  mm=parseInt(document.getElementById)("monthdate").value);
-  yy=parseInt(document.getElementById)("birthyear").value);
+function getDayofWeek(){
+  var days=["Sunday","Monday","Tuesday","Wesnesday","Thursday","Friday","Saturday"];
+  var maleNames=["Kwasi","Kwadwo","Kwabena", "Kwaku","Yaw","Kofi","Kwame"];
+  var femaleNames=["Akosua", "Adwoa", "Abenaa","Akua","Yaa","Afua","Ama"];
 
-  If((mm<1)||(mm<12)){
+  let cc=parseInt(document.getElementById("centuryear").value);
+  let dd=parseInt(document.getElementById("birthdate").value);
+  let mm=parseInt(document.getElementById("monthdate").value);
+  let yy=parseInt(document.getElementById("birthyear").value);
+
+  if(mm<=1 && mm>12)
+  {gendergendergender
     alert("Invalid Month");
+  }else if (dd<=0 && dd>31)
+  {
+    alert("Invalid date of Birth");
   }
-  else if((dd<0)||(dd>31){
-    alert("Invalid date of Birth")
-  }
-  else{
-    var dayOfWeek= Math.floor(( ( (cc/4) -2*cc-1) + ((5*yy/4) ) + ((26*(mm+1)/10)) + dd) mod 7);
-return dayOfWeek;
+gender
+    var dayOfWeek= Math.floor(( ( (cc/4) -2*cc-1) + ((5*yy/4) ) + ((26*(mm+1)/10)) + dd) % 7);
 
-  }
-
-  function checkGender(){
-    var gender= documentgetElementByName("Gender");
-    if(gender[0].checked===true){
-      var gender= "male"
+    var gender= document.querySelector('input[name="Gender"]:checked').value;
+    if(gender==="Male"){
+      maleGender= "male"
     }
-    else if (gender[1].checked===true){
-      var gender="female";
+    else if (gender==="Female"){
+      femaleGender="female";
     }
     else {
-      console.log("No gender was selected");
+      alert("No gender was selected");
     }
-    alert(gender);
-    return gender;
-  }
+if (maleGender)
+{
+  console.log(days[dayOfWeek]);
+  console.log(maleNames[dayOfWeek]);
 }
-  function findName(){
-    var newCallDay=getDayofWeek();
-    var newGender=checkGender();
-
-if (newGender==="male"){
-  document.getElementById("answer").innerhtml=("Your birthday is" +days{newDayOfWeek}+"and your name is"+maleName+);
-}else if (newGender==="female"){
-  document.getElementById("answer").innerhtml=("Your birthday is" +days{newDayOfWeek}+"and your name is"+femaleName+   );
-
+if (femaleNamesGender)
+{
+  console.log(days[dayOfWeek]);
+  console.log(femaleNames[dayOfWeek]);
+  alert ('Your name is  "+femaName+" and you were born on "dayOfWeek");
+}
 }
